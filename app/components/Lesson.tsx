@@ -5,12 +5,13 @@ import Link from 'next/link';
 interface LessonProps {
     id: number,
     title: string,
+    description: string
 }
 
-const Lesson = ({id, title}: LessonProps) => {
+const Lesson = ({id, title, description}: LessonProps) => {
     return (
         <Link href="unit/1">
-            <div className="relative flex justify-between">
+            <div className="relative flex justify-center">
                 <div className="flex flex-col items-center w-10 mr-4 md:w-24">
                     <div>
                         <div
@@ -38,26 +39,21 @@ const Lesson = ({id, title}: LessonProps) => {
                 viewport={{once: true}}
                 transition={{
                     type: "spring",
-                    stiffness: 350,
-                    damping: 30
+                    stiffness: 400,
+                    damping: 20
                 }}
                 variants={{
                     visible: {opacity: 1, scale: 1},
                     hidden: {opacity: 0, scale: 0}
                 }}
             >
-                <div>
-                    <div
-                        className="relative flex-1 mb-10 bg-white border-b-4 border-sky-200 shadow rounded-3xl cursor-pointer">
-                        <div className="relative z-20 p-6">
-                            <p className="mb-2 text-xl font-bold text-gray-600">{title}</p>
-                            <p className="text-gray-700">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. veniam libero
-                                facilis minus
-                                reprehenderit.
-                            </p>
-                        </div>
-
+                <div
+                    className="relative flex-1 mb-10 bg-white border-b-4 border-sky-200 shadow rounded-3xl cursor-pointer w-96">
+                    <div className="relative z-20 p-6">
+                        <p className="mb-2 text-xl font-bold text-gray-600">{title}</p>
+                        <p className="text-gray-700">
+                            {description}
+                        </p>
                     </div>
                 </div>
             </motion.div>
