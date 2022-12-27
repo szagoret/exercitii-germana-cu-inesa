@@ -1,11 +1,14 @@
 import {Logo} from "app/components/Logo";
+import Link from "next/link";
 
 const Header = () => {
     return (
         <header className="sticky top-0 z-50 shadow">
             <div className="navbar bg-base-100  backdrop-blur-xl bg-white/75">
                 <div className="navbar-start">
-                    <Logo/>
+                    <Link href="/">
+                        <Logo/>
+                    </Link>
                 </div>
                 <div className="navbar-center">
                     <div className="flex flex-col">
